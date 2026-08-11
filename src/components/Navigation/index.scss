@@ -1,0 +1,74 @@
+@use '@styles/variables.scss' as *;
+@use '@styles/breakpoints.scss' as *;
+
+.navigation {
+  &-list {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    @include tablet {
+      display: flex;
+      column-gap: 31.3px;
+    }
+  }
+
+  &-item {
+    font-size: 15px;
+    text-wrap: nowrap;
+  }
+}
+
+.window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: calc(50vh - 20vh);
+  left: calc(50vw - 32vw);
+  z-index: 1;
+  width: 64vw;
+  height: 40vh;
+  border-radius: 6px;
+  border: 1px solid #e7e8ea;
+  background-image: url(/public/images/headlineBg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include tablet {
+    display: none;
+  }
+
+  &__close-btn {
+    position: absolute;
+    right: 0;
+    width: 30px;
+    aspect-ratio: 1;
+    background-image: url(/public/images/closeButton.svg);
+    background-repeat: no-repeat;
+  }
+
+  &__nav {
+    margin-top: 20px;
+  }
+
+  &-list {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &-item {
+    padding-top: 15px;
+    color: $white-color;
+  }
+
+  &__button {
+    margin-top: 25px;
+    height: 30px;
+    border-radius: 6px;
+  }
+}

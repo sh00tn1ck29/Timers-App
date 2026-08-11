@@ -1,0 +1,57 @@
+@use '@styles/variables.scss' as *;
+@use '@styles/breakpoints.scss' as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 25px auto 0 auto;
+  height: 40px;
+  width: 81vw;
+
+  @include desktop {
+    justify-content: start;
+    width: 1170px;
+  }
+
+  &__logo {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: $extraBold-weight;
+    color: $white-color;
+    line-height: 20px;
+    text-wrap: nowrap;
+
+    @include desktop {
+      margin-right: 570px;
+      font-size: 20px;
+    }
+  }
+
+  &__button {
+    display: none;
+    font-weight: $bold-weight;
+    background-color: $white-color;
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: 1px;
+
+    @include tablet {
+      display: block;
+      margin-left: 31px;
+      width: 132px;
+      height: 40px;
+    }
+  }
+
+  &__burger-btn {
+    width: 30px;
+    height: 30px;
+    background-image: url(public/images/Burgermenu.svg);
+    background-repeat: no-repeat;
+
+    @include tablet {
+      display: none;
+    }
+  }
+}
