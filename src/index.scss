@@ -11,6 +11,7 @@ body {
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
+  background-color: $altwhite-color;
 }
 
 a {
@@ -38,4 +39,5 @@ h6 {
 
 #root {
   display: flex;
+  flex-direction: column;
 }

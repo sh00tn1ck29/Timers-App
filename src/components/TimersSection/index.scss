@@ -1,0 +1,44 @@
+@use '@styles/variables.scss' as *;
+@use '@styles/breakpoints.scss' as *;
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+
+    @include desktop {
+      margin-top: 248px;
+    }
+  }
+
+  &__headline {
+    font-size: 20px;
+    font-weight: $light-weight;
+
+    @include tablet {
+      font-size: 27px;
+    }
+
+    @include desktop {
+      font-size: 35px;
+    }
+  }
+
+  &__strong {
+    font-weight: $bold-weight;
+  }
+
+  &__description {
+    margin: 17px 10px 60px 10px;
+    max-width: 570px;
+    text-align: center;
+    color: $altgrey-color;
+  }
+}
