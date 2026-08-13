@@ -14,31 +14,39 @@
     margin-top: 70px;
 
     @include desktop {
-      margin-top: 248px;
+      margin-top: 250px;
     }
   }
 
   &__headline {
+    text-align: center;
     font-size: 20px;
     font-weight: $light-weight;
+    font-style: normal;
 
     @include tablet {
       font-size: 27px;
+      line-height: 50px;
+      letter-spacing: 1px;
     }
 
     @include desktop {
+      width: 570px;
       font-size: 35px;
     }
   }
 
   &__strong {
-    font-weight: $bold-weight;
+    margin-right: 1px;
+    font-weight: $extraBold-weight;
   }
 
   &__description {
-    margin: 17px 10px 60px 10px;
+    margin: 16px 10px 60px 10px;
     max-width: 570px;
     text-align: center;
+    line-height: 30px;
+    font-style: normal;
     color: $altgrey-color;
   }
 }

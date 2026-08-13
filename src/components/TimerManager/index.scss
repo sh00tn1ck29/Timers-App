@@ -5,12 +5,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 280px;
   width: clamp(290px, 70vw, 70vw);
   border-radius: 12px;
   background-color: $white-color;
 
   @include tablet {
-    flex-direction: row;
     align-items: start;
     max-width: 770px;
   }
@@ -24,12 +24,13 @@
     @include tablet {
       flex-direction: row;
       align-items: start;
+      width: 490px;
     }
   }
 
   &__input {
-    margin: 40px 20px 30px 20px;
-    padding-left: 20px;
+    margin: 40px 5px 30px 5px;
+    padding: 2px 20px 0px 20px;
     width: clamp(280px, 65vw, 570px);
     height: 50px;
     font-size: 17px;
@@ -38,6 +39,7 @@
     border: 1px solid #e7e8ea;
 
     @include tablet {
+      margin: 40px 20px 30px 0px;
       width: 305px;
     }
   }
@@ -54,13 +56,18 @@
     );
 
     @include tablet {
-      width: 165px;
       margin-top: 40px;
+      padding: 0;
+      width: 165px;
     }
   }
 
   &__line {
-    height: 1px;
-    color: #e7e8ea;
+    margin: 0px 0px 69px 0px;
+    border-inline: none;
+    border-bottom: none;
+    border-top: 1px solid #e7e8ea;
+    width: 100%;
+    background-color: #e7e8ea;
   }
 }
