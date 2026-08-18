@@ -4,7 +4,7 @@ export const Headline = () => {
   return (
     <section className="headline">
       <div className="headline__container">
-        <img className="headline__logo" src="public/images/AppIcon.svg" />
+        <img className="headline__logo" src="./images/AppIcon.svg" />
         <h3 className="headline__text">
           <strong className="headline__strong">Timers App.</strong> Best landing
           page for web and mobile apps
@@ -14,7 +14,7 @@ export const Headline = () => {
           <button className="headline__watch btn">Watch Video</button>
         </div>
       </div>
-      <img className="headline__decoration" src="public/images/Tablet.png" />
+      <img className="headline__decoration" src="./images/Tablet.png" />
     </section>
   );
 };
