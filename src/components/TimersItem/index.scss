@@ -67,7 +67,7 @@
 
   &__btn--toggle {
     border-radius: 50%;
-    background-image: url(./images/PauseIcon.png);
+    background-image: url(/images/PauseIcon.png);
     background-size: contain;
     background-repeat: no-repeat;
   }
@@ -80,7 +80,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-image: url(./images/ContinueIcon.svg);
+    background-image: url(/images/ContinueIcon.svg);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -95,7 +95,7 @@
     width: 50px;
     height: 50px;
     background-color: transparent;
-    background-image: url(./images/DeleteIcon.svg);
+    background-image: url(/images/DeleteIcon.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
