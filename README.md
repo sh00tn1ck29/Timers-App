@@ -1,75 +1,42 @@
-# React + TypeScript + Vite
+# Timers App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### [Live Demo](https://timers-app-ksyx.vercel.app/)
 
-Currently, two official plugins are available:
+A responsive, Pixel-Perfect Single Page Application (SPA) built with React and TypeScript for creating, managing, and tracking multiple real-time timers simultaneously. The application fully implements background persistence, dynamic naming, custom state styling, and responsive design based on Figma layouts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+### Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Pixel-Perfect & Adaptive Layout:** Responsive implementation matching Figma designs across Desktop, Tablet, and Mobile devices. Handles long timer names gracefully without breaking layout bounds.
+- **Dynamic Timer Creation:** Instant timer creation via input button (`Create timer`) or pressing `Enter`. If submitted empty, auto-generates a dynamic name in the `From hh:mm` format based on current time.
+- **Top-Stack Sorting:** Newly created timers are automatically placed at the top of the list (`Newest -> Oldest`).
+- **Real-Time Controls & Visual States:** Toggle between `start` and `pause` controls with distinct visual styling for paused states, along with instant deletion via the `trash` button.
+- **Accurate Time Formatting (`hh:mm:ss`):** Formats active time up to seconds in `hh:mm:ss` (e.g., `01:02:03` for 1 hour, 2 minutes, 3 seconds).
+- **Persistent State Across Sessions:** Preserves timer state and background progress in `localStorage`. If the browser is closed and reopened 2 hours later, timers accurately reflect the elapsed 2 hours without stopping.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Framework & Language:** [React](https://reactjs.org/) (Functional Components, Hooks), [TypeScript](https://www.typescriptlang.org/) (Strict Typing)
+- **Time Formatting:** [Moment.js](https://momentjs.com/) (UTC time formatting & dynamic timestamp creation)
+- **Styling & Methodology:** [Sass (SCSS)](https://sass-lang.com/), [BEM Methodology](https://en.bem.info/methodology/) (Block-Element-Modifier)
+- **Build Tooling:** [Vite](https://vitejs.dev/), [ESLint](https://eslint.org/)
+- **Storage & Deployment:** Web Storage API (`localStorage`), [Vercel](https://vercel.com/)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Breakpoint Management
 
-```
+The layout adapts seamlessly across three primary device viewports:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Desktop:** `1400px` and above (Full expanded view according to Figma specs).
+- **Tablet:** From `480px` up to `1400px` (Fluid alignment and container optimization).
+- **Mobile:** From `320px` to `480px` (Compact structural views for small touchscreens).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Author
 
-```
+- **Maksym Shavryhin** — _Main Developer_ ([GitHub Profile](https://github.com/sh00tn1ck29))
