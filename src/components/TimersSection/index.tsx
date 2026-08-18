@@ -4,12 +4,12 @@ import './index.scss';
 export const TimersSection = () => {
   return (
     <>
-      <section className="timer">
-        <div className="timer__text">
-          <h3 className="timer__headline">
-            <b className="timer__strong">Why</b> do we use it?
+      <section className="timers">
+        <div className="timers__text">
+          <h3 className="timers__headline">
+            <b className="timers__strong">Why</b> do we use it?
           </h3>
-          <p className="timer__description">
+          <p className="timers__description">
             This sounded nonsense to Alice, so she said nothing, but set off at
             once toward the Red Queen. To her surprise, she lost sight of her in
             a moment.

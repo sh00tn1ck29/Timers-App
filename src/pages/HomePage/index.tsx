@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import Headline from '@/components/Headline';
 import TimersSection from '@/components/TimersSection';
 import Header from '@components/Header';
@@ -11,6 +12,7 @@ export const HomePage = () => {
         <Headline />
       </div>
       <TimersSection />
+      <Footer />
     </>
   );
 };

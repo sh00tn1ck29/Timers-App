@@ -1,8 +1,9 @@
 import moment from 'moment';
 import { FormEvent, useEffect, useState } from 'react';
+import TimersItem from '../TimersItem';
 import './index.scss';
 
-interface Timer {
+export interface Timer {
   id: string;
   name: string;
   seconds: number;
@@ -11,7 +12,14 @@ interface Timer {
 
 export const TimerManager = () => {
   const [timerName, setTimerName] = useState<string>('');
-  const [timers, setTimers] = useState<Timer[]>([]);
+  const [timers, setTimers] = useState<Timer[]>(() => {
+    const savedTimers = localStorage.getItem('timers');
+    return savedTimers ? JSON.parse(savedTimers) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('timers', JSON.stringify(timers));
+  }, [timers]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,16 +35,17 @@ export const TimerManager = () => {
 
   const handleCreateTimer = (e: FormEvent) => {
     e.preventDefault();
-    if (!timerName.trim()) return;
+    const creationTime = moment().format('HH:mm');
+    const defaultName = `From ${creationTime}`;
 
     const newTimer: Timer = {
       id: Date.now().toString(),
-      name: timerName,
+      name: timerName || defaultName,
       seconds: 0,
       isRunning: true,
     };
 
-    setTimers((prev) => [...prev, newTimer]);
+    setTimers((prev) => [newTimer, ...prev]);
     setTimerName('');
   };
 
@@ -74,28 +83,19 @@ export const TimerManager = () => {
       <hr className="create__line" />
 
       <div className="create__list">
-        {timers.map((timer) => (
-          <div key={timer.id} className="timer-item">
-            <span className="timer-item__name">{timer.name}</span>
-            <span className="timer-item__time">
-              {formatTime(timer.seconds)}
-            </span>
-
-            <button
-              className="timer-item__btn timer-item__btn--toggle"
-              onClick={() => toggleTimer(timer.id)}
-            >
-              {timer.isRunning ? '⏸' : '▶'}
-            </button>
-
-            <button
-              className="timer-item__btn timer-item__btn--delete"
-              onClick={() => deleteTimer(timer.id)}
-            >
-              🗑
-            </button>
-          </div>
-        ))}
+        {timers.length === 0 ? (
+          <div className="create__block"></div>
+        ) : (
+          timers.map((timer) => (
+            <TimersItem
+              timer={timer}
+              toggleTimer={toggleTimer}
+              deleteTimer={deleteTimer}
+              formatTime={formatTime}
+              key={timer.id}
+            />
+          ))
+        )}
       </div>
     </div>
   );

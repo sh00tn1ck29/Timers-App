@@ -1,0 +1,106 @@
+@use '@styles/breakpoints.scss' as *;
+@use '@styles/variables.scss' as *;
+
+.footer {
+  display: flex;
+  align-items: center;
+  height: 110px;
+  width: 100%;
+  border-top: 1px solid $border--color;
+  background-color: $white-color;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-inline: auto;
+    width: 80%;
+    height: 40px;
+
+    @include desktop {
+      margin-inline: auto;
+      padding-inline: 134px;
+      width: 1440px;
+    }
+  }
+
+  &__logo {
+    font-size: 20px;
+    font-weight: $extraBold-weight;
+    line-height: 25px;
+    color: $black-color;
+
+    @include desktop {
+      margin-left: 1px;
+    }
+  }
+
+  &__terms {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 8px;
+      min-width: 186px;
+      row-gap: 10px;
+      font-size: 11px;
+      text-align: center;
+      color: $footertext--color;
+    }
+  }
+
+  &__heart {
+    display: inline-block;
+    position: relative;
+    width: 12px;
+    img {
+      display: inline-block;
+      position: absolute;
+      top: -9px;
+      left: -0.25px;
+      width: 12px;
+      height: 11px;
+    }
+  }
+
+  &__strong {
+    margin-left: 2px;
+  }
+
+  &__icons {
+    display: flex;
+    margin: 0 0 0 0;
+    padding: 0;
+    border: 1px solid $border--color;
+    border-radius: 6px;
+    background: #fff;
+    list-style-type: none;
+  }
+
+  &__icon {
+    width: 38.7px;
+    height: 38px;
+  }
+
+  &__image {
+    display: block;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    width: 38.7px;
+  }
+
+  &__twitter {
+    border-right: 1px solid $border--color;
+  }
+
+  &__facebook {
+    border-right: 1px solid $border--color;
+  }
+}
