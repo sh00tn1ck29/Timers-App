@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { FormEvent, useEffect, useState } from 'react';
+import { type FormEvent, useEffect, useState } from 'react';
 import TimersItem from '../TimersItem';
 import './index.scss';
 
