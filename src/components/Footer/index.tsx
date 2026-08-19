@@ -29,7 +29,7 @@ export const Footer = () => {
           </li>
           <li className="footer__icon">
             <a className="footer__link footer__instagram" href="#">
-              <img className="footer__image " src="/images/instagramIcon.svg" />
+              <img className="footer__image " src="/images/InstagramIcon.svg" />
             </a>
           </li>
         </ul>
